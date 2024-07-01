@@ -136,13 +136,13 @@ const Resume = () => {
                     {education.items.map((item) => (
                       <Link href={item.siteLink ? item.siteLink : ""} key={item.institution}>
                         <Button
-                          className="bg-[#232329] h-[150px]
+                          className="bg-[#232329]
                         flex flex-col items-center py-6 px-10 justify-center gap-1 lg:items-start
                         "
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3
-                            className=" max-w-[260px] h-[60px]
+                            className=" max-w-[260px] tracking-wider
                           text-center lg:text-left text-xl 
                           "
                           >
