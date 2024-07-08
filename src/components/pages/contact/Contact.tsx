@@ -44,7 +44,7 @@ const Contact = () => {
         "
         >
           {/* col 1 */}
-          <div>
+          <div className="w-full xl:w-auto">
             <ContactForm />
           </div>
           {/* col 2 */}

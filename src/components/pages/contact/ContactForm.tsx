@@ -1,31 +1,107 @@
-"use client"
+"use client";
 import { Button as MovingBtn } from "@/aceternityUI/movingBorder";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import handleContact from "@/pages/api/contact";
+import sendContact from "@/services/sendContact";
+import { useState } from "react";
+
+type TInitialInput = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+type TFormState = {
+  data: TInitialInput;
+  isLoading?: boolean;
+};
+
+const initialInput: TInitialInput = {
+  name: "",
+  email: "",
+  message: "",
+};
+
 const ContactForm = () => {
-  const onSubmit = (e: any) => {
-    e.preventDefault();
+  const [state, setState] = useState<TFormState>({
+    data: initialInput,
+    isLoading: false,
+  });
+  const { data, isLoading } = state;
+
+  const handleOnChange = (e: any) => {
+    // replace field value onChange action
+    setState((pre) => ({
+      ...pre,
+      data: {
+        ...pre.data,
+        [e.target.name]: e.target.value,
+      },
+    }));
   };
+
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      await sendContact(data)
+      // loading start.....
+      setState((pre) => ({
+        ...pre,
+        isLoading: false,
+
+      }));
+
+
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+
   return (
     <MovingBtn>
       <form
         onSubmit={onSubmit}
-        className="bg-[#27272c] flex flex-col gap-5 rounded-xl p-10  lg:w-[500px] mx-auto"
+        className="bg-[#27272c] flex flex-col gap-5 rounded-xl p-10  xl:w-[500px] w-full xl:mx-auto"
       >
         <h2>Send me project</h2>
         {/* input field */}
-        <Input type="text" placeholder="write you name" />
-        <Input type="text" placeholder="write you email" />
-        <Textarea
-          className="h-[90px]"
-          placeholder="Give me the scoop on your next big thing!"
+        <Input
+          type="text"
+          required
+          value={data.name}
+          placeholder="write you name"
+          name="name"
+          onChange={handleOnChange}
         />
-        <Button type="submit" className="w-[150px]">
-          Send Message
-        </Button>
+        <Input
+          type="text"
+          required
+          value={data.email}
+          placeholder="write you email"
+          name="email"
+          onChange={handleOnChange}
+        />
+        <Textarea
+          name="message"
+          required
+          value={data.message}
+          placeholder="Give me the scoop on your next big thing!"
+          onChange={handleOnChange}
+        />
+        {isLoading ? (
+          "loading"
+        ) : (
+          <Button type="submit" className="w-[150px]">
+            Send Message
+          </Button>
+        )}
       </form>
     </MovingBtn>
-  )
-}
-export default ContactForm
+  );
+};
+export default ContactForm;
