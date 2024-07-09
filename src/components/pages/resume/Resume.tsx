@@ -142,7 +142,7 @@ const Resume = () => {
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3
-                            className=" max-w-[260px] tracking-wider
+                            className=" tracking-wider
                           text-center lg:text-left text-xl 
                           "
                           >

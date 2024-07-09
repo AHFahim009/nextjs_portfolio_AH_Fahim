@@ -43,7 +43,10 @@ const Project = () => {
             <span>
               <Badge>{project.category}</Badge>
             </span>
-            <h2 className="text-2xl">{project.title}</h2>
+            <div>
+              <h2 className="text-2xl">{project.title}</h2>
+
+            </div>
             <p className="max-w-[500px] text-white/60">{project.description}</p>
             <ul className="flex gap-4 flex-wrap max-w-[500px]  ">
               {project.tech.map((item, i) => (
