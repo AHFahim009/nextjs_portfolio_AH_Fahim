@@ -1,5 +1,6 @@
 import lostAndFound from "../assests/lostandFound.png";
 import book_e_show from "../assests/book_e_show.png";
+import book_e_show_dashboard from "../assests/book_e_commerce_dashboard.png";
 
 export const projectData = [
   {
@@ -16,7 +17,7 @@ export const projectData = [
   {
     num: "02",
     title: "Book_E_Show",
-    image: book_e_show,
+    image: book_e_show_dashboard,
     category: "Fullstack",
     tech: ["React", "SASS", "Express", "Mongooes", "MongoDB", "Stripe"],
     description: "Featuring a vast collection of books available for purchase. Users can buy books securely through online payment methods. The admin dashboard provides comprehensive oversight of all platform activities",

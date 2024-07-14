@@ -25,9 +25,9 @@ const RewardCard = ({ item }: TProp) => {
         <CardItem translateZ="100" className="xl:h-[300px]">
           <Image
             src={item.image}
-            width={500}
-            height={500}
-            className="h-full w-full  rounded-xl group-hover/card:shadow-xl"
+            width={1000}
+            height={1000}
+            className="h-full w-full  rounded-xl object-fill group-hover/card:shadow-xl"
             alt="thumbnail"
           />
         </CardItem>
@@ -46,7 +46,7 @@ const RewardCard = ({ item }: TProp) => {
             target="__blank"
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >
-            <Link href="">show full</Link>
+            <Link href="">Preview</Link>
           </CardItem>
           <CardItem translateZ={20} as="button">
             <button

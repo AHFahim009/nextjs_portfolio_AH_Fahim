@@ -26,17 +26,19 @@ import Link from "next/link";
 
 const Resume = () => {
   return (
-    <div className="mt-28 min-h-[80vh] flex justify-center ">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 1.4,
-            duration: 0.4,
-            ease: "easeIn",
-          },
-        }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 1.4,
+          duration: 0.4,
+          ease: "easeIn",
+        },
+      }}
+      className="mt-28 min-h-[80vh] flex justify-center ">
+      <div
+
         className="container mx-auto h-full "
       >
         <Tabs
@@ -88,7 +90,7 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[24px] text-center xl:text-left ">
                 <h1 className="text-4xl font-bold">Education</h1>
-                <ScrollArea className="h-[400px] px-2 pb-3">
+                <ScrollArea className="h-[400px]  pb-3">
                   <HoverEffect items={myEducations}></HoverEffect>
                 </ScrollArea>
               </div>
@@ -102,12 +104,12 @@ const Resume = () => {
                 </p>
 
                 <ScrollArea className="h-[330px] pb-3 ">
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                  <ul className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-6">
                     {skills.skillLists.map((item) => (
                       <li key={item.name}>
                         <TooltipProvider delayDuration={300}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center ">
+                            <TooltipTrigger className="w-[100px] h-[100px] bg-[#27272c] flex justify-center items-center">
                               <span className="text-6xl transition-all duration-300 hover:text-accent">
                                 {item.icon}
                               </span>
@@ -170,8 +172,8 @@ const Resume = () => {
             </TabsContent>
           </div>
         </Tabs>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 };
 export default Resume;

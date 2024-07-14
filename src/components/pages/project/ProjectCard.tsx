@@ -10,9 +10,9 @@ const ProjectCard = ({ item }: any) => {
             <Image
               src={item.image}
               alt={item.title}
-              width={500}
-              height={500}
-              className="h-full w-full  object-cover rounded-xl group-hover/card:shadow-xl"
+              width={1000}
+              height={1000}
+              className="h-full w-full  rounded-xl group-hover/card:shadow-xl"
             />
           </div>
           <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>

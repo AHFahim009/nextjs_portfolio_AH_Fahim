@@ -1,5 +1,5 @@
 const sendContact = async (payload: any) => {
-  fetch("/api/contact", {
+  const response = await fetch("/api/contact", {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
@@ -7,6 +7,9 @@ const sendContact = async (payload: any) => {
       accept: "application/json",
     },
   });
+
+  const data = response.json()
+  return data
 };
 
 export default sendContact;

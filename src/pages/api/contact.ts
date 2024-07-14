@@ -1,7 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default function handleContact(req: NextApiRequest, res: NextApiResponse) {
-  console.log(req.body);
+export default function handleContact(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  // data validation checking : ok
+  // node mailer integration
+  return res.status(404).json({ message: "provide all field value" });
 
-  res.status(200).json({ message: 'Hello, world!' });
 }

@@ -7,6 +7,7 @@ import { FiDownload } from "react-icons/fi";
 import SocialLinks from "./SocialLinks";
 import TypingAnim from "@/animation/typingAnim/TypingAnim";
 import { sentence } from "@/data/data";
+import { Spotlight } from "@/aceternityUI/Spotlight";
 
 
 
@@ -23,14 +24,27 @@ const Home = () => {
   };
 
   return (
-    <section className="h-screen xl:pt-28 pt-32">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col justify-center items-center  ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 1.4,
+          duration: 0.4,
+          ease: "easeIn",
+        },
+      }}
+      className="h-screen">
+      <div className="container mx-auto h-full flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center relative ">
           {/* col 1 */}
           <div className="text-center">
 
             <TypingAnim />
-
+            <Spotlight
+              className="top-0 left-0 md:left-0 md:top-[-4rem]"
+              fill="white"
+            />
             <h1 className="h1 mb-6">
               Hello I&apos;m <br />
               <span className="text-accent">AH Fahim</span>
@@ -71,7 +85,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 export default Home;

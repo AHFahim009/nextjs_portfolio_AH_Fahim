@@ -32,7 +32,7 @@ const PageTransition = ({ children }: { children: ReactNode }) => {
           }}
           onAnimationStart={() => setIsTransitioning(true)}
           onAnimationComplete={() => setIsTransitioning(false)}
-          className="w-screen h-screen fixed top-0 bg-primary pointer-events-none"
+          className="w-screen h-screen fixed top-0 bg-primary pointer-events-none overflow-hidden"
         />
         {children}
       </div>

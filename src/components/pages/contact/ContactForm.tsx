@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import handleContact from "@/pages/api/contact";
 import sendContact from "@/services/sendContact";
 import { useState } from "react";
+import { FaLess } from "react-icons/fa";
 
 type TInitialInput = {
   name: string;
@@ -46,19 +47,20 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      await sendContact(data)
       // loading start.....
       setState((pre) => ({
         ...pre,
         isLoading: false,
-
       }));
-
-
-
+      const res = await sendContact(data);
+      console.log("backend res", res);
     } catch (error) {
       console.log(error);
-
+    } finally {
+      setState((pre) => ({
+        ...pre,
+        isLoading: false,
+      }));
     }
   };
 
@@ -72,7 +74,6 @@ const ContactForm = () => {
         {/* input field */}
         <Input
           type="text"
-          required
           value={data.name}
           placeholder="write you name"
           name="name"
@@ -80,7 +81,6 @@ const ContactForm = () => {
         />
         <Input
           type="text"
-          required
           value={data.email}
           placeholder="write you email"
           name="email"
@@ -88,7 +88,6 @@ const ContactForm = () => {
         />
         <Textarea
           name="message"
-          required
           value={data.message}
           placeholder="Give me the scoop on your next big thing!"
           onChange={handleOnChange}

@@ -20,19 +20,18 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section className="mt-24 pb-8">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: {
-            delay: 1.4,
-            duration: 0.4,
-            ease: "easeInOut",
-          },
-        }}
-        className="container mx-auto"
-      >
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          delay: 2,
+          duration: 0.4,
+          ease: "easeIn",
+        },
+      }}
+    >
+      <div className="container mx-auto pt-24 pb-8 ">
         {/* title */}
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-2xl text-white/60">Get in touch</h1>
@@ -40,8 +39,8 @@ const Contact = () => {
         {/* contact section */}
         <div
           className="flex gap-[30px] xl:gap-20 flex-col  items-center xl:items-start xl:flex-row mt-8
-       xl:justify-center
-        "
+ xl:justify-center
+  "
         >
           {/* col 1 */}
           <div className="w-full xl:w-auto">
@@ -66,8 +65,8 @@ const Contact = () => {
             </ul>
           </div>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.div>
   );
 };
 export default Contact;
