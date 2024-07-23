@@ -47,7 +47,7 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <div className="text-outline text-2xl font-extrabold text-transparent ">{item.year}</div>
+            <div className="text-accent">{item.year}</div>
             <CardTitle>{item.title}</CardTitle>
           </Card>
         </div>
@@ -84,7 +84,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-white text-xl tracking-tighter  mt-4", className)}>
+    <h4 className={cn(" tracking-wider  text-center lg:text-left text-xl  mt-4", className)}>
       {children}
     </h4>
   );

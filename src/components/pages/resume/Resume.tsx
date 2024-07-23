@@ -89,7 +89,7 @@ const Resume = () => {
             {/* education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[24px] text-center xl:text-left ">
-                <h1 className="text-4xl font-bold">Education</h1>
+                <h1 className="text-4xl font-bold">My Education</h1>
                 <ScrollArea className="h-[400px]  pb-3">
                   <HoverEffect items={myEducations}></HoverEffect>
                 </ScrollArea>
