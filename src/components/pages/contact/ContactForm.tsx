@@ -50,15 +50,16 @@ const ContactForm = () => {
       // loading start.....
       setState((pre) => ({
         ...pre,
-        isLoading: false,
+        isLoading: true,
       }));
       const res = await sendContact(data);
-      console.log("backend res", res);
+      window.alert(res.message);
     } catch (error) {
-      console.log(error);
+      console.log("contact form error", error);
     } finally {
       setState((pre) => ({
         ...pre,
+        data: initialInput,
         isLoading: false,
       }));
     }

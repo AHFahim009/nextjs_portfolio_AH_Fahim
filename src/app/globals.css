@@ -15,6 +15,12 @@
   .h3 {
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
   }
+  .hireBtn {
+    @apply;
+  }
+  .mySkillBtn {
+    @apply absolute bottom-8 inline-flex h-12 animate-shimmer items-center justify-center rounded-md bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-accent hover:text-accent-hover transition-colors focus:outline-none;
+  }
 }
 
 .nameGradient {
@@ -123,4 +129,40 @@
   .content-box:nth-child(4) {
     margin-top: 10px;
   }
+}
+
+.button {
+  background-color: #6f3c91;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #5a2e7e;
+}
+
+.button:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  margin-left: 5px;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(110, 90, 185, 0.5);
 }

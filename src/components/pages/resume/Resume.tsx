@@ -18,11 +18,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Button } from "@/aceternityUI/movingBorder";
-import { HoverEffect } from "@/aceternityUI/Card-hover-effect";
 
 import StatsCard from "./StatsCard";
 import RewardCard from "./RewardCard";
 import Link from "next/link";
+import { EducationCard } from "./EducationCard";
 
 const Resume = () => {
   return (
@@ -91,7 +91,16 @@ const Resume = () => {
               <div className="flex flex-col gap-[24px] text-center xl:text-left ">
                 <h1 className="text-4xl font-bold">My Education</h1>
                 <ScrollArea className="h-[400px]  pb-3">
-                  <HoverEffect items={myEducations}></HoverEffect>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                    {
+                      myEducations.map((item, i) =>
+                        <EducationCard items={item} key={i}>
+                        </EducationCard>
+                      )
+                    }
+                  </div>
+
                 </ScrollArea>
               </div>
             </TabsContent>
@@ -104,7 +113,7 @@ const Resume = () => {
                 </p>
 
                 <ScrollArea className="h-[330px] pb-3 ">
-                  <ul className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                  <ul className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-6 ">
                     {skills.skillLists.map((item) => (
                       <li key={item.name}>
                         <TooltipProvider delayDuration={300}>
@@ -134,12 +143,12 @@ const Resume = () => {
                 </p>
 
                 <ScrollArea className="h-[330px] pb-3 px-2 ">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
                     {education.items.map((item) => (
                       <Link href={item.siteLink ? item.siteLink : ""} key={item.institution}>
-                        <Button
+                        <div
                           className="bg-[#232329]
-                        flex flex-col items-center py-6 px-10 justify-center gap-1 lg:items-start
+                        flex flex-col items-center rounded-xl py-6 px-10 justify-center gap-1 lg:items-start
                         "
                         >
                           <span className="text-accent">{item.duration}</span>
@@ -153,7 +162,7 @@ const Resume = () => {
                           <div>
                             <p className="text-white/60">{item.institution}</p>
                           </div>
-                        </Button>
+                        </div>
                       </Link>
                     ))}
                   </ul>

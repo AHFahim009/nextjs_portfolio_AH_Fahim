@@ -32,10 +32,6 @@ const Contact = () => {
       }}
     >
       <div className="container mx-auto pt-24 pb-8 ">
-        {/* title */}
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="text-2xl text-white/60">Get in touch</h1>
-        </div>
         {/* contact section */}
         <div
           className="flex gap-[30px] xl:gap-20 flex-col  items-center xl:items-start xl:flex-row mt-8
@@ -48,7 +44,7 @@ const Contact = () => {
           </div>
           {/* col 2 */}
           <div>
-            <h3 className="text-white/60 mb-3"> Talk to me </h3>
+            <h3 className="text-white/60 mb-3"> Get in touch </h3>
             {/* contact card section */}
             <ul className="flex flex-col gap-4">
               {contactInfo.map((item, i) => (
