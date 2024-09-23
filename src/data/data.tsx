@@ -42,7 +42,7 @@ export const navItems = [
 export const socialLinks = [
   {
     icon: <FaGithub />,
-    path: "",
+    path: "https://github.com/AHFahim009 ",
   },
   {
     icon: <FaFacebook />,
@@ -50,6 +50,6 @@ export const socialLinks = [
   },
   {
     icon: <FaLinkedin />,
-    path: "",
+    path: "https://www.linkedin.com/in/ahfahim/ ",
   },
 ];
